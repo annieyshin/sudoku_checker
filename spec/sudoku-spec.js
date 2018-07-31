@@ -1,22 +1,25 @@
-import { Sudoku } from './../src/sudoku.js';
+import { Sudoku } from './../src/js/sudoku.js';
 
 describe('Sudoku', function(){
-  var reusableSukoku;
+  var reusableSudoku;
 
   beforeEach(function(){
-    reusableSukoku = new Sudoku();
+    reusableSudoku = new Sudoku([1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7, 8, 9,1, 2, 3, 4, 5, 6, 7, 8, 9,1, 2, 3, 4, 5, 6, 7, 8, 9,1, 2, 3, 4, 5, 6, 7, 8, 9,1, 2, 3, 4, 5, 6, 7, 8, 9,1, 2, 3, 4, 5, 6, 7, 8, 9,1, 2, 3, 4, 5, 6, 7, 8, 9,1, 2, 3, 4, 5, 6, 7, 8, 9]);
   })
 
   it('should show how beforeEach() works', function() {
-    console.log(reusableSukoku);
-  });
-
-  it('will have 9 rows and 9 columns', function(){
-    expect(reusableSukoku.row.length).toEqual(9);
-    expect(reusableSukoku.column.length).toEqual(9);
+    console.log(reusableSudoku)
+  })
+  it('will have 81 user inputted numbers', function(){
+    expect(reusableSudoku.userAnswer.length).toEqual(81)
   })
 
-  // it('will have numbers 1-9 in row 1', function(){
-  //   var su
-  // })
+  it('user has put in 81 numbers for the puzzle', function(){
+    expect(reusableSudoku.checkIfAllNumbersEntered()).toEqual(true)
+  })
+
+  it('will have 9 rows with digits 1-9', function(){
+    expect(reusableSudoku.checkRows()).toEqual(true)
+  })
+
 })
